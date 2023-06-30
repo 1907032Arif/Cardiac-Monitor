@@ -10,11 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Cardiac_Monitor">
         <activity
+            android:name=".signUp"
+            android:exported="false" />
+        <activity
+            android:name=".logIn"
+            android:exported="false" />
+        <activity
             android:name=".RecordsActivity"
             android:exported="false"
             android:label="Records"
-            android:theme="@style/Theme.Cardiac_Monitor"
-            />
+            android:theme="@style/Theme.Cardiac_Monitor" />
         <activity
             android:name=".SplashActivity"
             android:exported="true">
@@ -26,10 +31,7 @@
         </activity>
         <activity
             android:name=".HomeActivity"
-            android:exported="true"/>
-
-
+            android:exported="true" />
     </application>
-
 
 </manifest>
