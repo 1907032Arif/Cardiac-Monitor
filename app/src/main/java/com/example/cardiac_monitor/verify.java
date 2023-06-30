@@ -1,5 +1,7 @@
 package com.example.cardiac_monitor;
 
+import static java.sql.DriverManager.println;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -34,10 +36,13 @@ public class verify extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_verify);
+        btmVerify = findViewById(R.id.verifyOTP);
+        eTOTP = findViewById(R.id.OTP);
 
-        String phoneNumber = getIntent().getStringExtra("Phone");
-//        mAuth = FirebaseAuth.getInstance();
-//        sendVerificationCode(phoneNumber);
+//        String phoneNumber = getIntent().getExtras().getString("Phone");
+        String phoneNumber = "+8801633193674";
+        mAuth = FirebaseAuth.getInstance();
+        sendVerificationCode(phoneNumber);
 
         btmVerify.setOnClickListener(new View.OnClickListener() {
             @Override

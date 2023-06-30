@@ -27,7 +27,7 @@ public class signUp extends AppCompatActivity {
             public void onClick(View view) {
                 String getPhn = phn.getText().toString();
                 Intent intent = new Intent(signUp.this, verify.class);
-                intent.putExtra("Phone", getPhn);
+//                intent.putExtra("Phone", getPhn);
                 startActivity(intent);
             }
         });
