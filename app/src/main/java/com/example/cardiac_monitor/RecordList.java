@@ -1,7 +1,6 @@
 package com.example.cardiac_monitor;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -43,17 +42,6 @@ public class RecordList {
         return recordList;
     }
 
-    /**
-     * Retrieves a list of records based on a given criteria.
-     *
-     * @param x The criteria for filtering records (example: category, status, etc.).
-     * @return A list of records that match the given criteria.
-     */
-    public List<Record> getRecords(int x)
-    {
-        List<Record>recordList = records;
-        return recordList;
-    }
 
     /**
      * Deletes a record from the list.
@@ -72,17 +60,6 @@ public class RecordList {
             throw new IllegalArgumentException();
         }
     }
-
-    /**
-     * Retrieves the count of records in the list.
-     *
-     * @return The number of records in the list.
-     */
-    public int count()
-    {
-        return records.size();
-    }
-
 
 
 }

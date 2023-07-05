@@ -1,35 +1,19 @@
 package com.example.cardiac_monitor;
 
-import static android.app.PendingIntent.getActivity;
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.replaceText;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.RootMatchers.isDialog;
-import static androidx.test.espresso.matcher.RootMatchers.withDecorView;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
-import static androidx.test.espresso.matcher.ViewMatchers.withText;
-
-import androidx.test.espresso.assertion.ViewAssertions;
-import androidx.test.espresso.matcher.RootMatchers;
-import androidx.test.espresso.matcher.ViewMatchers;
-import static org.hamcrest.Matchers.is;
-import static org.hamcrest.Matchers.not;
-
 
 import androidx.test.rule.ActivityTestRule;
 
 import org.junit.Rule;
 import org.junit.Test;
-import androidx.test.core.app.ActivityScenario;
-import androidx.test.ext.junit.rules.ActivityScenarioRule;
-import org.junit.Rule;
-import org.junit.Test;
 
 // ...
-
-
 
 /**
  * The HomeActivityTest class represents the test cases for the HomeActivity class.
@@ -139,8 +123,6 @@ public class HomeActivityTest {
      */
     @Test
     public void testRecordsButton() {
-        ActivityScenario<HomeActivity> activityScenarioRule = ActivityScenario.launch(HomeActivity.class);
-
 
         // Perform click action on the "Records" button
         onView(withId(R.id.records))
@@ -149,10 +131,7 @@ public class HomeActivityTest {
         // Verify that the RecordsActivity is launched
         onView(withId(R.id.records_activity)).check(matches(isDisplayed()));
 
-
     }
-
-
 
 }
 
