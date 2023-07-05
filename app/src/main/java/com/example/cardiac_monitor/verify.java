@@ -30,7 +30,7 @@ import java.util.concurrent.TimeUnit;
 public class verify extends AppCompatActivity {
     Button btmVerify;
     EditText eTOTP;
-    String verificationId;
+    String verificationId, email, pass;
     private FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,8 +39,15 @@ public class verify extends AppCompatActivity {
         btmVerify = findViewById(R.id.verifyOTP);
         eTOTP = findViewById(R.id.OTP);
 
-//        String phoneNumber = getIntent().getExtras().getString("Phone");
+//      String phoneNumber = getIntent().getExtras().getString("Phone");
         String phoneNumber = "+8801633193674";
+
+        //email = getIntent().getExtras().getString("Email");
+        email = "zobayerabedin@gmail.com";
+
+        //pass = getIntent().getExtras().getString("Email");
+        pass = "123457";
+
         mAuth = FirebaseAuth.getInstance();
         sendVerificationCode(phoneNumber);
 
@@ -63,6 +70,7 @@ public class verify extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // if the code is correct and the task is successful
                             // we are sending our user to new activity.
+                            registerNewUser(email, pass);
                             Intent i = new Intent(verify.this, HomeActivity.class);
                             startActivity(i);
                             finish();
@@ -125,7 +133,7 @@ public class verify extends AppCompatActivity {
 
                 // after setting this code
                 // to OTP edittext field we
-                // are calling our verifycode method.
+                // are calling our verifyCode method.
                 verifyCode(code);
             }
         }
@@ -146,6 +154,27 @@ public class verify extends AppCompatActivity {
         // after getting credential we are
         // calling sign in method.
         signInWithCredential(credential);
+    }
+
+    private void registerNewUser(String email, String pass)
+    {
+        // create new user or register new user
+        mAuth.createUserWithEmailAndPassword(email, pass)
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task)
+                    {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(getApplicationContext(),
+                                    "Registration successful!", Toast.LENGTH_LONG).show();
+                        }
+                        else {
+                            // Registration failed
+                            Toast.makeText(getApplicationContext(), "Registration failed!!"
+                                                    + " Please try again later", Toast.LENGTH_LONG).show();
+                        }
+                    }
+                });
     }
 
 }

@@ -189,6 +189,7 @@ public class  HomeActivity extends AppCompatActivity {
                         }
 
 
+
                         if(v>=60 && v<=80)
                         {
                             binding.status.setText("Normal");
@@ -198,8 +199,6 @@ public class  HomeActivity extends AppCompatActivity {
                         {
                             binding.status.setText("Exceptional");
                         }
-
-
                     }
                 });
 
@@ -220,6 +219,14 @@ public class  HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(HomeActivity.this,RecordsActivity.class));
+            }
+        });
+
+        binding.logOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this, logIn.class);
+                startActivity(intent);
             }
         });
 

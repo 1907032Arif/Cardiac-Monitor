@@ -6,21 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".logIn">
 
+
     <ImageView
         android:id="@+id/logoImageView"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:src="@drawable/logo"
+        android:contentDescription="Logo"
         android:max="150"
         android:progressDrawable="@drawable/shape_circle_progress"
+        android:src="@drawable/logo"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.473"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.274"
-        android:contentDescription="Logo" />
-
+        app:layout_constraintVertical_bias="0.256" />
 
     <Button
         android:id="@+id/signIn"
@@ -36,7 +36,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.836" />
+        app:layout_constraintVertical_bias="0.743" />
 
     <EditText
         android:id="@+id/password"
@@ -47,37 +47,38 @@
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.715" />
+        app:layout_constraintVertical_bias="0.657" />
 
     <EditText
-        android:id="@+id/phone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/email"
+        android:layout_width="255dp"
+        android:layout_height="55dp"
         android:layout_marginBottom="44dp"
         android:ems="10"
-        android:hint="Phone No."
-        android:inputType="phone"
+        android:hint="Enter email address"
+        android:inputType="textEmailAddress"
         android:minHeight="48dp"
         app:layout_constraintBottom_toTopOf="@+id/password"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.583"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logoImageView"
-        app:layout_constraintVertical_bias="0.859" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/toSU"
-        android:layout_width="206dp"
-        android:layout_height="48dp"
+        android:layout_width="175dp"
+        android:layout_height="58dp"
         android:text="Want to create a new account?"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.229"
+        app:layout_constraintHorizontal_bias="0.139"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.941" />
+        app:layout_constraintVertical_bias="0.857" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
