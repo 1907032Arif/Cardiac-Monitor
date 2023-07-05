@@ -18,7 +18,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class logIn extends AppCompatActivity {
     Button btmSI, btmSU;
-    EditText phn, pass;
+    EditText email, pass;
 
     FirebaseAuth mAuth;
     @Override
@@ -28,7 +28,7 @@ public class logIn extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-        phn = findViewById(R.id.phone);
+        email = findViewById(R.id.email);
         pass = findViewById(R.id.password);
         btmSI = findViewById(R.id.signIn);
         btmSU = findViewById(R.id.toSU);
@@ -36,18 +36,17 @@ public class logIn extends AppCompatActivity {
         btmSI.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String getPhn = phn.getText().toString();
-                Intent intent = new Intent(logIn.this, HomeActivity.class);
-                intent.putExtra("Phone", getPhn);
-
-                startActivity(intent);
+                String getEmail = email.getText().toString();
+                String getPass = pass.getText().toString();
+                loginUserAccount(getEmail, getPass);
             }
         });
 
         btmSU.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(logIn.this, signUp.class);
+                startActivity(intent);
             }
         });
     }
@@ -69,29 +68,22 @@ public class logIn extends AppCompatActivity {
         mAuth.signInWithEmailAndPassword(email, pass)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
-                            public void onComplete(
-                                    @NonNull Task<AuthResult> task)
+                            public void onComplete(@NonNull Task<AuthResult> task)
                             {
                                 if (task.isSuccessful()) {
                                     Toast.makeText(getApplicationContext(), "Login successful!!", Toast.LENGTH_LONG).show();
                                     // if sign-in is successful
                                     // intent to home activity
-                                    Intent intent = new Intent(logIn.this, signUp.class);
+                                    Intent intent = new Intent(logIn.this, HomeActivity.class);
                                     startActivity(intent);
                                 }
 
                                 else {
-
-                                    // sign-in failed
-                                    Toast.makeText(getApplicationContext(),
-                                                    "Login failed!!",
-                                                    Toast.LENGTH_LONG)
-                                            .show();
-
-
+                                   // sign-in failed
+                                    Toast.makeText(getApplicationContext(), "Login failed!!", Toast.LENGTH_LONG).show();
                                 }
                             }
-                        });
+                });
     }
 
 
