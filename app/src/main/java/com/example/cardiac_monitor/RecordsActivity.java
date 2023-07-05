@@ -45,8 +45,6 @@ public class RecordsActivity extends AppCompatActivity {
 
         //// Initialize the database helper class for managing the SQLite database.
         myDatabaseHelper = new MyDatabaseHelper(RecordsActivity.this);
-        // Get a writable database.
-        SQLiteDatabase sqLiteDatabase =  myDatabaseHelper.getWritableDatabase();
 
         listView = findViewById(R.id.list_view);
         no_text = findViewById(R.id.no_text);

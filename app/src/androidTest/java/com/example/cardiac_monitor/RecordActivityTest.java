@@ -1,35 +1,17 @@
 package com.example.cardiac_monitor;
 
-import static android.app.PendingIntent.getActivity;
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.replaceText;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.RootMatchers.isDialog;
-import static androidx.test.espresso.matcher.RootMatchers.withDecorView;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
-import static androidx.test.espresso.matcher.ViewMatchers.withText;
 
-import androidx.test.espresso.Espresso;
-import androidx.test.espresso.action.ViewActions;
-import androidx.test.espresso.assertion.ViewAssertions;
-import androidx.test.espresso.matcher.RootMatchers;
-import androidx.test.espresso.matcher.ViewMatchers;
-import static org.hamcrest.Matchers.is;
-import static org.hamcrest.Matchers.not;
-
-
-import androidx.test.rule.ActivityTestRule;
-
-import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
 import androidx.test.core.app.ActivityScenario;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
-import org.junit.Rule;
-import org.junit.Test;
-
 /**
  * This class contains Espresso UI tests for the RecordsActivity.
  */
@@ -41,8 +23,6 @@ public class RecordActivityTest {
     @Rule
     public ActivityScenarioRule<RecordsActivity> activityScenarioRule =
             new ActivityScenarioRule<>(RecordsActivity.class);
-
-
 
     /**
      * Test case to verify the update functionality in the RecordsActivity.
