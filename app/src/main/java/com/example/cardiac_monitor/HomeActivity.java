@@ -165,7 +165,6 @@ public class  HomeActivity extends AppCompatActivity {
                         {
                             v=150;
                         }
-
                         //startAnimatedCounter(0,v);
 
                         if(v>=60 && v<=80)
@@ -179,8 +178,6 @@ public class  HomeActivity extends AppCompatActivity {
                            // YoYo.with(Techniques.Shake).duration(1000).repeat(1).playOn(binding.status);
                             binding.status.setText("Exceptional");
                         }
-
-
                     }
                 });
 
@@ -202,6 +199,14 @@ public class  HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(HomeActivity.this,RecordsActivity.class));
+            }
+        });
+
+        binding.logOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this, logIn.class);
+                startActivity(intent);
             }
         });
 
