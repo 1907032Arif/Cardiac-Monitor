@@ -40,13 +40,13 @@ public class verify extends AppCompatActivity {
         eTOTP = findViewById(R.id.OTP);
 
       String phoneNumber = getIntent().getExtras().getString("Phone");
-//        String phoneNumber = "+8801633193674";
+      //String phoneNumber = "+8801633193674";
 
-        //email = getIntent().getExtras().getString("Email");
-        email = "zobayerabedin@gmail.com";
+        email = getIntent().getExtras().getString("Email");
+        //email = "zobayerabedin@gmail.com";
 
-        pass = getIntent().getExtras().getString("Email");
-//        pass = "123457";
+        pass = getIntent().getExtras().getString("Pass");
+        //pass = "123457";
 
         mAuth = FirebaseAuth.getInstance();
         sendVerificationCode(phoneNumber);

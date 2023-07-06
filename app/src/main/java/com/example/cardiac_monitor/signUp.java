@@ -11,7 +11,7 @@ import android.widget.EditText;
 
 public class signUp extends AppCompatActivity {
     Button btmSU;
-    EditText phn, pass, ConPass;
+    EditText phn, pass, ConPass, email;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,6 +19,7 @@ public class signUp extends AppCompatActivity {
 
         phn = findViewById(R.id.phone);
         pass = findViewById(R.id.password);
+        email =findViewById(R.id.email);
         ConPass = findViewById(R.id.confirmPass);
         btmSU = findViewById(R.id.signUp);
 
@@ -26,8 +27,13 @@ public class signUp extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String getPhn = phn.getText().toString();
+                String getEmail = email.getText().toString();
+                String getPass = email.getText().toString();
+
                 Intent intent = new Intent(signUp.this, verify.class);
                 intent.putExtra("Phone", getPhn);
+                intent.putExtra("Email", getEmail);
+                intent.putExtra("Pass", getPass);
                 startActivity(intent);
             }
         });
