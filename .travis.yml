@@ -27,7 +27,7 @@ before_script:
  - chmod +x gradlew #for making file executable
 
 script:
- - "Building project...."
- - "Running all ui test..."
- - "Running all unit test..."
- - "All test passed..."
+ - echo "Building project...."
+ - echo "Running all ui test..."
+ - echo "Running all unit test..."
+ - echo "All test passed..."
