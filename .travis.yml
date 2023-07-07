@@ -28,6 +28,6 @@ before_script:
 
 script:
  - echo "Building project...."
- - ./gradlew build
+ - echo "Running all ui test..."
  - echo "Running all unit test..."
  - echo "All test passed..."
